@@ -41,6 +41,8 @@ Ctrl + b # move back one full screen
 Ctrl + f # move forward one full screen
 Ctrl + d # move forward 1/2 a screen
 Ctrl + u # move back 1/2 a screen
+Ctrl + ] || gd # Goto definition
+
 ```
 
 ## Insert mode - inserting/appending text
