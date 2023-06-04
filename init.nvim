@@ -1,0 +1,55 @@
+set tabstop=4
+set nocompatible
+set shiftwidth=4
+set softtabstop=4
+set expandtab
+set autoindent
+set smartindent
+set ruler
+set showcmd
+set incsearch
+set shellslash
+set number
+set relativenumber
+set cino+=L0
+syntax on
+set background=dark
+inoremap kj <Esc>
+set nocompatible
+set wildmenu
+set mouse=a
+set textwidth=180
+call plug#begin()
+
+Plug 'https://github.com/preservim/nerdtree' " NerdTree
+Plug 'tpope/vim-fugitive'
+Plug 'https://github.com/vim-airline/vim-airline'
+" Plug 'feline-nvim/feline.nvim'
+Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
+Plug 'http://github.com/tpope/vim-surround'
+Plug 'https://github.com/tpope/vim-commentary'
+Plug 'https://github.com/rafi/awesome-vim-colorschemes'
+Plug 'https://github.com/preservim/tagbar'
+Plug 'morhetz/gruvbox'
+Plug 'davidhalter/jedi-vim'
+Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
+Plug 'junegunn/fzf.vim'
+Plug 'https://github.com/tpope/vim-obsession'
+set encoding=UTF-8
+
+call plug#end()
+nnoremap <C-t> :NERDTreeToggle<CR>
+nmap <F8> :TagbarToggle<CR>
+colorscheme gruvbox
+if !&scrolloff
+    set scrolloff=5       " Show next 3 lines while scrolling.
+endif
+if !&sidescrolloff
+    set sidescrolloff=5   " Show next 5 columns while side-scrolling.
+endif
+let g:jedi#popup_on_dot = 0
+let g:jedi#use_tabs_not_buffers = 1
+let g:airline#extensions#branch#use_vcscommand = 1
+set nohlsearch
+set noswapfile
+set clipboard+=unnamedplus
